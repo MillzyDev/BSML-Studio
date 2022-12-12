@@ -13,22 +13,26 @@ namespace Studio.Broadcast.Tests
             }
         }
 
+        public static string Example2Path
+        {
+            get
+            {
+                return Path.Combine(Directory.GetCurrentDirectory(), "Test2.bsml");
+            }
+        }
+
         [Fact]
         public void LinkTest()
         {
             var instance = Files.Instance;
             instance.LinkFile(ExamplePath);
-
-            Directory.Delete(ExamplePath, true);
         }
 
         [Fact]
         public void AddTest()
         {
             var instance = Files.Instance;
-            instance.AddFile(ExamplePath);
-
-            Directory.Delete(ExamplePath, true);
+            instance.AddFile(Example2Path);
         }
     }
 }
