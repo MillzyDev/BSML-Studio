@@ -3,13 +3,13 @@ using Xunit;
 
 namespace Studio.Broadcast.Tests
 {
-    public class FilesTest
+    public class EnvironmentTests
     {
         public static string ExamplePath
         {
             get
             {
-                return Path.Combine(Directory.GetCurrentDirectory(), "Test.bsml");
+                return Path.Combine(Directory.GetCurrentDirectory(), "Examples", "Test.bsml");
             }
         }
 
@@ -17,21 +17,21 @@ namespace Studio.Broadcast.Tests
         {
             get
             {
-                return Path.Combine(Directory.GetCurrentDirectory(), "Test2.bsml");
+                return Path.Combine(Directory.GetCurrentDirectory(), "Examples","Test2.bsml");
             }
         }
 
         [Fact]
         public void LinkTest()
         {
-            var instance = Files.Instance;
+            var instance = Environment.Instance;
             instance.LinkFile(ExamplePath);
         }
 
         [Fact]
         public void AddTest()
         {
-            var instance = Files.Instance;
+            var instance = Environment.Instance;
             instance.AddFile(Example2Path);
         }
     }

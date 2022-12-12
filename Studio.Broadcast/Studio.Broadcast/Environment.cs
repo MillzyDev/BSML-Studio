@@ -1,20 +1,20 @@
 ﻿namespace Studio.Broadcast
 {
-    public class Files
+    public class Environment
     {
-        private static readonly Lazy<Files> _lazy = new(() => new Files());
+        private static readonly Lazy<Environment> _lazy = new(() => new Environment());
 
         private readonly string environmentPath;
 
-        private Files()
+        private Environment()
         {
-            string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string appdata = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
             environmentPath = Path.Combine(appdata, "BSMLStudio", "Environment");
 
             Directory.CreateDirectory(environmentPath);
         }
 
-        public static Files Instance => _lazy.Value;
+        public static Environment Instance => _lazy.Value;
 
         /// <summary>
         /// Full path of the BSMLStudio Environment directory.
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// Creates a symbolic link of a file in the BSMLStudio environment.
+        /// Creates a symbolic link of a file in the BSMLStudio environment. (REQUIRES ADMIN PERMS)
         /// </summary>
         /// <param name="file">Full path of the file to link to the environment.</param>
         /// <returns>FileSystemInfo of the symbolic link created.</returns>
@@ -66,5 +66,11 @@
             string path = Path.Combine(environmentPath, name);
             File.Delete(path);
         }
+
+        /// <summary>
+        /// Gets a list of file paths of all the top directory files in the Environment directory.
+        /// </summary>
+        /// <returns></returns>
+        public string[] GetFiles() => Directory.GetFiles(environmentPath, "*", SearchOption.TopDirectoryOnly);
     }
 }
