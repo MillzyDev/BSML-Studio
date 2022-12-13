@@ -67,10 +67,10 @@
 
         private void AutoRefreshRoutine()
         {
-            while (refresh)
+            do
             {
-
-            }
+                Refresh();
+            } while (refresh);
         }
 
         public void Dispose()
