@@ -11,7 +11,6 @@
         public event OnReload? OnReload;
 
         private readonly Dictionary<string, string> cacheData = new();
-        private readonly Task refreshRoutine;
         private bool refresh;
 
         private Environment environment;
@@ -23,7 +22,7 @@
             Refresh();
 
             refresh = true;
-            refreshRoutine = Task.Run(AutoRefreshRoutine);
+            Task.Run(AutoRefreshRoutine);
         }
 
         public static EnvironmentCache Instance => _lazy.Value;
@@ -67,10 +66,10 @@
 
         private void AutoRefreshRoutine()
         {
-            while (refresh)
+            do
             {
-
-            }
+                Refresh();
+            } while (refresh);
         }
 
         public void Dispose()
