@@ -1,4 +1,4 @@
-﻿namespace Studio.Broadcast
+﻿namespace Studio.Environment
 {
     public class Environment
     {

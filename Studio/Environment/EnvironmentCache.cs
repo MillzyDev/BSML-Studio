@@ -1,4 +1,4 @@
-﻿namespace Studio.Broadcast
+﻿namespace Studio.Environment
 {
     /// <summary>
     /// Runs when the <see cref="EnvironmentCache"/> begins to check files for edits.
