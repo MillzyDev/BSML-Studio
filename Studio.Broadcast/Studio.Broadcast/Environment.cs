@@ -71,6 +71,6 @@
         /// Gets a list of file paths of all the top directory files in the Environment directory.
         /// </summary>
         /// <returns></returns>
-        public string[] GetFiles() => Directory.GetFiles(environmentPath, "*", SearchOption.TopDirectoryOnly);
+        public string[] GetFiles() => Directory.GetFiles(environmentPath, "*.bsml", SearchOption.TopDirectoryOnly);
     }
 }
