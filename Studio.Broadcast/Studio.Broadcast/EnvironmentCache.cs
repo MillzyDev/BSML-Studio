@@ -42,7 +42,8 @@
         /// </summary>
         private void OnChange(object sender, FileSystemEventArgs e)
         {
-            
+            string file = e.FullPath;
+            cacheData[file] = File.ReadAllText(file);
         }
 
         /// <summary>
