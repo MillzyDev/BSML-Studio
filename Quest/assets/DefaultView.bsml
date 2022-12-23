@@ -1,7 +1,0 @@
-<bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-    xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/RedBrumbler/Quest-BSML-Docs/gh-pages/schema.xsd'>
-    <vertical>
-        <text text="Connect to the BSML Studio desktop application."/>
-        <text text="" id="questIp"/>
-    </vertical>
-</bg>

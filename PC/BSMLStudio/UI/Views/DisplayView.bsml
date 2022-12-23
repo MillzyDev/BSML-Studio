@@ -1,6 +1,0 @@
-﻿<bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-    xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/RedBrumbler/Quest-BSML-Docs/gh-pages/schema.xsd'>
-	<vertical>
-		<text text="Select a BSML file to view in the menu to the left."/>
-	</vertical>
-</bg>
