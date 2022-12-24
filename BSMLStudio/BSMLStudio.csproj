@@ -8,10 +8,25 @@
     <Platforms>AnyCPU;x86;x64</Platforms>
   </PropertyGroup>
 
+	<PropertyGroup>
+		<Company></Company>
+		<Authors>Millzy</Authors>
+		<PackageId>BSMLStudio</PackageId>
+		<Version>1.0.0</Version>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+	</PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AntiVirusScanner" Version="1.0.2" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
   </ItemGroup>
+
+	<PropertyGroup>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<SignAssembly>True</SignAssembly>
+		<Title>BSML Studio</Title>
+	</PropertyGroup>
 
   <ItemGroup>
     <Reference Include="Zenject">
