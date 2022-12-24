@@ -63,7 +63,7 @@ namespace BSMLStudio.Managers
                     continue;
                 }
 
-                if (args.Length < 0 && args[0].ToLower() == "help") 
+                if (args.Length > 0 && args[0].ToLower() == "help") 
                 {
                     Console.WriteLine($"{currentCommand} - {command.Description}\n      {command.Usage}");
                     _logger.Information($"Displaying help for {currentCommand}");
