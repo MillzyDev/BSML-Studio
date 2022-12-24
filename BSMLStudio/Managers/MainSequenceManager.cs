@@ -87,15 +87,5 @@ namespace BSMLStudio.Managers
             } 
             while (currentCommand.ToLower() != "quit");
         }
-
-        public void RegisterCommand(ICommand command)
-        {
-            commands[command.Name] = command;
-        }
-
-        public void UnregisterCommand(ICommand command)
-        {
-            commands.Remove(command.Name);
-        }
     }
 }
