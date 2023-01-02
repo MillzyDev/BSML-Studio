@@ -7,7 +7,12 @@ namespace BSMLStudio.Installers
     {
         public override void InstallBindings()
         {
+            Container.BindInterfacesAndSelfTo<HelpCommand>().AsSingle();
+            Container.BindInterfacesAndSelfTo<HelpCommand>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LinkCommand>().AsSingle();
             Container.BindInterfacesAndSelfTo<ListCommand>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LocationCommand>().AsSingle();
+            Container.BindInterfacesAndSelfTo<RemoveCommand>().AsSingle();
         }
     }
 }
