@@ -1,4 +1,5 @@
 ﻿using BSMLStudio.Managers;
+using Serilog.Core;
 using Zenject;
 
 namespace BSMLStudio.Installers
