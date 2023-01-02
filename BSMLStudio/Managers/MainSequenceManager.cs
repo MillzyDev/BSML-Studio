@@ -21,7 +21,15 @@ namespace BSMLStudio.Managers
 
         public void Initialize()
         {
-            ConsoleRoutine();
+            try
+            {
+                ConsoleRoutine();
+            } 
+            catch (Exception ex)
+            {
+                _logger.Fatal(ex, "Something went wrong in the main sequence. (Likely caused by a command.)");
+                Initialize();
+            }
         }
 
         public void ConsoleRoutine()
@@ -84,6 +92,8 @@ namespace BSMLStudio.Managers
                 {
                     Console.WriteLine($"Something went wrong when executing {currentCommand}. :/");
                 }
+
+                Console.WriteLine();
             } 
             while (currentCommand.ToLower() != "quit");
         }
