@@ -28,6 +28,10 @@
 		<Title>BSML Studio</Title>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\BSMLStudio.Environment\BSMLStudio.Environment.csproj" />
+	</ItemGroup>
+
   <ItemGroup>
     <Reference Include="Zenject">
       <HintPath>..\Zenject\Zenject.dll</HintPath>
