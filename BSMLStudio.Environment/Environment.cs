@@ -1,6 +1,6 @@
 ﻿using SysEnvironment = System.Environment;
 
-namespace BSMLStudio.Environment
+namespace BSMLStudio
 {
     public class Environment
     {
@@ -64,7 +64,21 @@ namespace BSMLStudio.Environment
                 throw new ArgumentException("File must be a .bsml file.");
 
             string name = Path.GetFileName(path);
-            File.CreateSymbolicLink(path, Path.Combine(envPath, name));
+            File.CreateSymbolicLink(Path.Combine(envPath, name), path);
+        }
+
+        /// <summary>
+        /// Removes an item from the environment.
+        /// </summary>
+        /// <param name="filename">Name of the file in the environment to move. (Not path)</param>
+        /// <exception cref="ArgumentException">Thrown if the file is not a .bsml file.</exception>
+        public void RemoveFromEnvironment(string filename)
+        {
+            if (!filename.EndsWith(".bsml"))
+                throw new ArgumentException("File must be a .bsml file.");
+
+            string name = Path.GetFileName(filename);
+            File.Delete(Path.Combine(envPath, name));
         }
     }
 }
