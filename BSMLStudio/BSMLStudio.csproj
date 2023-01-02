@@ -43,5 +43,4 @@
       <HintPath>..\Zenject\Zenject-usage.dll</HintPath>
     </Reference>
   </ItemGroup>
-
 </Project>
