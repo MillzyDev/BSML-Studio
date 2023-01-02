@@ -16,7 +16,7 @@ namespace BSMLStudio
         {
             _container = new DiContainer();
 
-            string logFile = Path.Combine(StudioEnvironment.Logs, $"{DateTime.Now:yyyy.MM.dd.HH.mm.ss}.log");
+            string logFile = Path.Combine(StudioDirectories.Logs, $"{DateTime.Now:yyyy.MM.dd.HH.mm.ss}.log");
 
             _logger = new LoggerConfiguration()
                 .WriteTo.File(logFile)
@@ -55,11 +55,8 @@ namespace BSMLStudio
             _logger.Information($"Binding {nameof(Logger)} instance...");
             _container.Bind<Logger>().FromInstance(_logger).AsSingle();
 
-            // Install Installers
             _logger.Information($"Installing {nameof(CommandInstaller)}...");
             _container.Install<CommandInstaller>();
-
-            // TODO: Load plugins
 
             _logger.Information($"Installing {nameof(AppInstaller)}...");
             _container.Install<AppInstaller>();
