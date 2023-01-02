@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 
 [assembly: AssemblyCompany("BSMLStudio")]
 [assembly: AssemblyConfiguration("Debug")]
