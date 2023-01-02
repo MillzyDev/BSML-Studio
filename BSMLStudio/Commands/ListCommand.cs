@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BSMLStudio.Commands
+﻿namespace BSMLStudio.Commands
 {
     public class ListCommand : ICommand
     {
@@ -15,8 +9,10 @@ namespace BSMLStudio.Commands
 
         public bool Execute(string[] args)
         {
-            Console.WriteLine("Not yet finished!");
+            string[] files = Environment.Instance.GetFiles();
+            string list = string.Join(",\n ", files);
 
+            Console.WriteLine($"Files in the environment:\n {list}");
             return true;
         }
     }
